@@ -1,0 +1,74 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --background-color: #ffb4e4;
+}
+
+html {
+  height: 100%;
+  background-color: var(--background-color);
+}
+
+body {
+  font-family: Raleway, sans-serif;
+  height: inherit;
+  min-width: 800px;
+  margin: 0;
+  padding: 0;
+  line-height: 0;
+  position: relative;
+}
+
+video {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.page__heading:hover::before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgb(255 255 255 / 0.3);
+  width: 100%;
+  height: 100%;
+}
+
+.page__heading:hover::after {
+  content: "На самом деле нет.\AВажнее &mdash; научиться ошибаться.";
+  line-height: 1.2;
+  white-space: pre;
+  position: absolute;
+  z-index: 2;
+  top: 150px;
+  left: 788px;
+  padding: 34px 52px 28px 52px;
+  font-size: 35px;
+  background-color: white;
+  border-radius: 20px;
+  border: 2px solid black;
+  box-shadow: 0 10px 0px 0px black;
+}
+
+.page__title {
+  scale: 1 1; /* hack to create a new stacking context */
+  text-transform: uppercase;
+  text-align: center;
+  margin: 0;
+  padding: 60px 430px 0;
+  font-size: 116px;
+  line-height: 1.18;
+  letter-spacing: 4px;
+}
+
+.page__title::after {
+  content: "*";
+}
